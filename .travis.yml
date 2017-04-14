@@ -3,7 +3,7 @@
 # Maintainer:   Stephen Davis <https://github.com/webdavis>
 # License:      GPLv3
 # Repository:   ansible-vagrant
-# Last Change:  Saturday 2017-04-15 09:08:21 MST
+# Last Change:  Saturday 2017-04-15 09:37:56 MST
 # Description:  Travis CI will build the required tools for this role.
 # =============================================================================
 
@@ -15,7 +15,7 @@ python:
 # case.
 
 # We need sudo access to test this role so use a full Virtual Machine such as one in a
-# vagrant machine instead of a docker container or ansible-container.
+# Vagrant machine instead of a container such as Docker or Ansible.
 sudo: required
 
 # Install Ansible.
