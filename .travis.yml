@@ -1,0 +1,8 @@
+# =============================================================================
+# Filename:     .travis.yml
+# Maintainer:   Stephen Davis <https://github.com/webdavis>
+# License:      GPLv3
+# Repository:   ansible-vagrant
+# Last Change:  Friday 2017-04-14 20:53:02 MST
+# Description:  Travis CI will build the required tools for this role.
+# =============================================================================
