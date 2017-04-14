@@ -3,13 +3,13 @@
 # Maintainer:   Stephen Davis <https://github.com/webdavis>
 # License:      GPLv3
 # Repository:   ansible-vagrant
-# Last Change:  Saturday 2017-04-15 09:05:51 MST
+# Last Change:  Saturday 2017-04-15 09:08:21 MST
 # Description:  Travis CI will build the required tools for this role.
 # =============================================================================
 
 language: python
 python:
-    - "2.7"
+    - 2.7
 
 # Travis CI defaults to Python 2.7 so specifying the key isn't necessary in this use
 # case.
