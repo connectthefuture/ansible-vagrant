@@ -1,2 +1,19 @@
-# git-project-ansible
-An Ansible playbook for equiping a project repository with the bare essentials (which happens to include a ready to go test environment).
+# ansible-vagrant
+This Ansible role can be used to install and maintain a vagrant virtual environment. (Tested on MacOS Sierra and Arch Kernel 4.10.8-1.)
+
+## Requirements
+
+This project has been tested on the following operating systems, however it may be compatible
+with older versions.
+
+* MacOS Sierra
+* Arch Linux Kernel 4.10.8-1 or later.
+* Ansible 2.0 or later.
+
+## Credits
+
+This project is maintained by [Stephen A. Davis](https://github.com/webdavis).
+
+## License
+
+[GPLv3](./License)
