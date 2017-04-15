@@ -3,9 +3,6 @@ This Ansible role can be used to install and maintain a vagrant virtual environm
 
 ## Requirements
 
-This project has been tested on the following operating systems, however it may be compatible
-with older versions.
-
 * MacOS Sierra
 * Arch Linux Kernel 4.10.8-1 or later.
 * Ansible 2.0 or later.
