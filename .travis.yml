@@ -3,30 +3,36 @@
 # Maintainer:   Stephen Davis <https://github.com/webdavis>
 # License:      GPLv3
 # Repository:   ansible-vagrant
-# Last Change:  Saturday 2017-04-15 09:08:21 MST
+# Last Change:  Monday 2017-04-17 16:51:11 MST
 # Description:  Travis CI will build the required tools for this role.
 # =============================================================================
 
 language: python
 python:
-    - 2.7
+  - 2.7
 
 # Travis CI defaults to Python 2.7 so specifying the key isn't necessary in this use
 # case.
 
 # We need sudo access to test this role so use a full Virtual Machine such as one in a
-# vagrant machine instead of a docker container or ansible-container.
+# Vagrant machine instead of a container such as Docker or Ansible.
 sudo: required
+
+# Install Vagrant
+before_install:
+  - wget https://releases.hashicorp.com/vagrant/1.9.3/vagrant_1.9.3_x86_64.deb
+  - sudo dkpg -i vagrant_1.9.3_x86_64.deb
 
 # Install Ansible.
 addons:
-    apt:
-        packages:
-            - python-pip
+  apt:
+    packages:
+      - python-pip
+
 
 install:
-    # Install the required Python libraries.
-    - pip install -r tests/requirements.txt
+  # Install the required Python libraries.
+  - pip install -r tests/requirements.txt
 
-    # Check Ansible version.
-    - ansible --version
+  # Check Ansible version.
+  - ansible --version
