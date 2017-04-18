@@ -1,0 +1,73 @@
+" vms {{{
+if has("vms")
+    set nobackup " Do not keep a backup file, use versions instead.
+else
+    set backup " Keep a backup file.
+endif
+" }}}
+
+" Settings {{{
+if has('mouse')
+    set mouse=r
+endif
+
+set autoread			" Reload files that have been changed during vim session.
+set backspace=indent,eol,start  " Allow <BS> over everything in insert mode.
+set clipboard=
+set cursorline                  " Highlight cursorline if compiled with syntax.
+set diffopt=vertical            " Vertical split is diff default.
+set expandtab
+set fileformat=unix             " Set the fileformat so that vim will be written without CR and ^M characters.
+set foldmethod=marker           " Set {{{ }}} as the opening/closing markers for vimscript files.
+set formatoptions+=t            " Controls automatic text wrapping depending on t flag.
+set formatoptions-=o            " Turns off comment insertion after typing 'o' or 'O'.
+if v:version > 703 || v:version == 703 && has("patch541")
+    set formatoptions+=j        " Delete comment character when joining commented lines.
+endif
+set history=2000                " Keep 2000 lines of command line history.
+set ignorecase			" Case-insensitive searches.
+set incsearch                   " Do incremental searching.
+set lazyredraw                  " Screen won't redraw while executing macros.
+set matchtime=3                 " How long it takes 'showmatch' to show matching bracket.
+set nowrapscan                  " Turn off search wrapping.
+set printoptions=syntax:n,number:y
+set ruler                       " Show the cursor position all the time.
+set selection=exclusive         " Set visual selection with cursor 1 column past the area to be manipulated.
+set scrolloff=5                 " Specify offset from the window border when scrolling.
+if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
+    set shell=/bin/bash         " If fish shell then propagate to bash shell.
+else
+    set shell=/bin/bash
+endif
+set showcmd                     " Display incomplete commands.
+set sessionoptions+=unix,slash
+set shiftwidth=4                " Number of spaces to use for each (auto)indent.
+set autoindent smartindent      " Automatically set indent using C-style standards.
+set smartcase			" Override ignorecase option if search pat contains uppercase letters.
+set smarttab			" Insert blanks according to shiftwidth at beginning of line.
+set showmatch                   " Show matching bracket.
+set softtabstop=4               " Number of spaces <Tab> counts for while performing edits.
+set term=xterm
+set ttimeout timeoutlen=500     " Sets the mapped key timeout to 350 milliseconds.
+set ttimeoutlen=0               " Sets the keycode timeout to 0. (
+set undodir=~/
+set undofile                    " Saves undo history to undo file upon exit and restores upon reentry.
+set whichwrap=b,s,<,>,[,]       " List of flags specifying which commands wrap text.
+set wildmenu                    " Shows possible completions above command line using auto completion.
+set wildmode=list:longest,list:full " list:full - When more than one match, list all matches and complete first match. list:longest - When more than one match, list all matches and complete till longest common string.
+" }}}
+
+" vundle#begin() {{{
+filetype off " required
+
+" Set the runtime path to include Vundle and provision it.
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here') }}}
+
+" Set Leader key. {{{
+unlet! mapleader
+let mapleader = "<up>"
+map l <leader>
+" }}}
